@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import authRouter from "./routes/auth.routes.js";
 import userRouter from "./routes/user.routes.js";
 import subscriptionRouter from "./routes/subscription.routes.js";
+import workflowRouter from "./routes/workflow.routes.js";
 import connectDatabase from "./database/mongodb.js";
 import errorMiddleware from "./middlewares/error.middleware.js";
 // import arcjetMiddleware from "./controllers/arcjet.middleware.js";
@@ -19,6 +20,7 @@ app.use(errorMiddleware);
 app.use('/api/v1/auth',  authRouter);
 app.use('/api/v1/user',  userRouter);
 app.use('/api/v1/subscription',  subscriptionRouter);
+app.use('/api/v1/workflow',  workflowRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello World');
